@@ -20,12 +20,14 @@ bool dfs(int u) {
         }
         return false;
 }
-int XYL() {
+int hungary() {
         int ans = 0;
         fill(match, match+n, -1);
-        fill(s, s+n, 0);
-        for(int i=0;i<n;++i) if(dfs(i))
-                ans ++;
+        for(int i=0;i<n;++i) {
+                fill(s, s+n, 0);
+                if(dfs(i))
+                        ans ++;
+        }
         return ans;
 }
 
