@@ -33,7 +33,7 @@ private:
         void add(int l, int r, int rt) {
                 if(L <= l && r <= R) {
                         a[rt] += V;
-                        s[rt] += V;
+                        s[rt] += (r-l+1)*V;
                         return;
                 }
                 relax(rt);
